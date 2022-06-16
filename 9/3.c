@@ -7,20 +7,20 @@ void print_underbar(int n){
 }
 void    jaegi(int n){
     if(n==0){
-        print_underbar(i);printf("\"Àç±ÍÇÔ¼ö°¡ ¹º°¡¿ä?\"\n");
-        print_underbar(i);printf("\"Àç±ÍÇÔ¼ö´Â ÀÚ±â ÀÚ½ÅÀ» È£ÃâÇÏ´Â ÇÔ¼ö¶ó³×\"\n");
-        print_underbar(i);printf("¶ó°í ´äº¯ÇÏ¿´Áö.\n");
+        print_underbar(i);printf("\"¿¿¿¿¿ ¿¿¿?\"\n");
+        print_underbar(i);printf("\"¿¿¿¿¿ ¿¿ ¿¿¿ ¿¿¿¿ ¿¿¿¿\"\n");
+        print_underbar(i);printf("¿¿ ¿¿¿¿¿.\n");
         i--;
         return ;
     }
     
-    print_underbar(i);printf("\"Àç±ÍÇÔ¼ö°¡ ¹º°¡¿ä?\"\n");
-    print_underbar(i);printf("\"Àß µé¾îº¸°Ô. ¿¾³¯¿¾³¯ ÇÑ »ê ²À´ë±â¿¡ ÀÌ¼¼»ó ¸ðµç Áö½ÄÀ» Åë´ÞÇÑ ¼±ÀÎÀÌ ÀÖ¾ú¾î.\n");
-    print_underbar(i);printf("¸¶À» »ç¶÷µéÀº ¸ðµÎ ±× ¼±ÀÎ¿¡°Ô ¼ö¸¹Àº Áú¹®À» Çß°í, ¸ðµÎ ÁöÇý·Ó°Ô ´ë´äÇØ ÁÖ¾úÁö.\n");
-    print_underbar(i);printf("±×ÀÇ ´äÀº ´ëºÎºÐ ¿Ç¾Ò´Ù°í ÇÏ³×. ±×·±µ¥ ¾î´À ³¯, ±× ¼±ÀÎ¿¡°Ô ÇÑ ¼±ºñ°¡ Ã£¾Æ¿Í¼­ ¹°¾ú¾î.\"\n");
+    print_underbar(i);printf("\"¿¿¿¿¿ ¿¿¿?\"\n");
+    print_underbar(i);printf("\"¿ ¿¿¿¿. ¿¿¿¿ ¿ ¿ ¿¿¿¿ ¿¿¿ ¿¿ ¿¿¿ ¿¿¿ ¿¿¿ ¿¿¿.\n");
+    print_underbar(i);printf("¿¿ ¿¿¿¿ ¿¿ ¿ ¿¿¿¿ ¿¿¿ ¿¿¿ ¿¿, ¿¿ ¿¿¿¿ ¿¿¿ ¿¿¿.\n");
+    print_underbar(i);printf("¿¿ ¿¿ ¿¿¿ ¿¿¿¿ ¿¿. ¿¿¿ ¿¿ ¿, ¿ ¿¿¿¿ ¿ ¿¿¿ ¿¿¿¿ ¿¿¿.\"\n");
     i++;
     jaegi(n-1);
-    print_underbar(i);printf("¶ó°í ´äº¯ÇÏ¿´Áö.\n");
+    print_underbar(i);printf("¿¿ ¿¿¿¿¿.\n");
     i--;
     return ;
 }
@@ -28,6 +28,6 @@ void    jaegi(int n){
 int main(){
     int n;
     scanf("%d",&n);
-    printf("¾î´À ÇÑ ÄÄÇ»ÅÍ°øÇÐ°ú ÇÐ»ýÀÌ À¯¸íÇÑ ±³¼ö´ÔÀ» Ã£¾Æ°¡ ¹°¾ú´Ù.\n");
+    printf("¿¿ ¿ ¿¿¿¿¿¿ ¿¿¿ ¿¿¿ ¿¿¿¿ ¿¿¿ ¿¿¿.\n");
     jaegi(n);
 }
