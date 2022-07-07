@@ -30,7 +30,7 @@ int main() {
 	int w, v;
 	for (int i = 0; i < n; i++) {
 		w = b[i].weight; v = b[i].value;
-		for (int j = max_bag; j >= 0; j--) {
+		for (int j = max_bag; j > 0; j--) {
 			if (w <= j) {
 				if (dp[j] < v + dp[j - w])
 					dp[j] = v + dp[j-w];
