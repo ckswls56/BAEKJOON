@@ -1,51 +1,49 @@
 #include <stdio.h>
-#include <stdlib.h>
-int dp[500][500];
+#include <string.h>
+#define MAX 501
+const int direction[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+int dp[MAX][MAX];
+int arr[MAX][MAX];
 int m, n;
-int **arr;
 
-int check(int y1, int x1, int y2, int x2)
+int dfs(int y, int x)
 {
-    if (y2 < 0 || x2 < 0 || y2 >= m || x2 >= n)
-        return 0;
-    if (arr[y1][x1] > arr[y2][x2])
-        return 1;
-    return 0;
-}
-
-void sol(int y, int x)
-{
-    dp[y][x]++;
-    if (x == n - 1 && y == m - 1)
+    //기저 사례
+    if (y == m && x == n)
     {
-        return;
+        return 1;
     }
 
-    if (check(y, x, y - 1, x)) // up
-        sol(y - 1, x);
-    if (check(y, x, y + 1, x)) // down
-        sol(y + 1, x);
-    if (check(y, x, y, x - 1)) // left
-        sol(y, x - 1);
-    if (check(y, x, y, x + 1)) // right
-        sol(y, x + 1);
+    if (dp[y][x] == -1)
+    {
+        dp[y][x] = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            int dy = y + direction[i][0];
+            int dx = x + direction[i][1];
+            if (arr[dy][dx] != 0 && arr[y][x] > arr[dy][dx])
+            {
+                dp[y][x] += dfs(dy, dx);
+            }
+        }
+    }
+    // 방문한 곳이라면 해당 좌표에서 목적지까지 도달할 수 있는 경로 반환
+    return dp[y][x];
 }
 
 int main()
 {
 
     scanf("%d %d", &m, &n);
-    arr = (int **)malloc(sizeof(int *) * m);
-
-    for (int i = 0; i < m; i++)
+    memset(dp, -1, sizeof(dp));
+    for (int i = 1; i <= m; i++)
     {
-        arr[i] = (int *)malloc(sizeof(int) * n);
-        for (int j = 0; j < n; j++)
+        for (int j = 1; j <= n; j++)
         {
             scanf("%d", &arr[i][j]);
         }
     }
-    sol(0, 0);
 
-    printf("%d", dp[m - 1][n - 1]);
+    printf("%d", dfs(1, 1));
 }
