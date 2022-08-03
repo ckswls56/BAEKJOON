@@ -1,33 +1,45 @@
 #include <stdio.h>
-int i=0;
-void print_underbar(int n){
-    while(n-->0){
+
+void print_underbar(int n)
+{
+    while (n-- > 0)
+    {
         printf("____");
     }
 }
-void    jaegi(int n){
-    if(n==0){
-        print_underbar(i);printf("\"¿¿¿¿¿ ¿¿¿?\"\n");
-        print_underbar(i);printf("\"¿¿¿¿¿ ¿¿ ¿¿¿ ¿¿¿¿ ¿¿¿¿\"\n");
-        print_underbar(i);printf("¿¿ ¿¿¿¿¿.\n");
-        i--;
-        return ;
+void jaegi(int n, int i)
+{
+    if (n == 0)
+    {
+        print_underbar(i);
+        printf("\"ì¬ê·€í•¨ìˆ˜ê°€ ë­”ê°€ìš”?\"\n");
+        print_underbar(i);
+        printf("\"ì¬ê·€í•¨ìˆ˜ëŠ” ìê¸° ìì‹ ì„ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë¼ë„¤\"\n");
+        print_underbar(i);
+        printf("ë¼ê³  ë‹µë³€í•˜ì˜€ì§€.\n");
+        return;
     }
-    
-    print_underbar(i);printf("\"¿¿¿¿¿ ¿¿¿?\"\n");
-    print_underbar(i);printf("\"¿ ¿¿¿¿. ¿¿¿¿ ¿ ¿ ¿¿¿¿ ¿¿¿ ¿¿ ¿¿¿ ¿¿¿ ¿¿¿ ¿¿¿.\n");
-    print_underbar(i);printf("¿¿ ¿¿¿¿ ¿¿ ¿ ¿¿¿¿ ¿¿¿ ¿¿¿ ¿¿, ¿¿ ¿¿¿¿ ¿¿¿ ¿¿¿.\n");
-    print_underbar(i);printf("¿¿ ¿¿ ¿¿¿ ¿¿¿¿ ¿¿. ¿¿¿ ¿¿ ¿, ¿ ¿¿¿¿ ¿ ¿¿¿ ¿¿¿¿ ¿¿¿.\"\n");
-    i++;
-    jaegi(n-1);
-    print_underbar(i);printf("¿¿ ¿¿¿¿¿.\n");
-    i--;
-    return ;
+
+    print_underbar(i);
+    printf("\"ì¬ê·€í•¨ìˆ˜ê°€ ë­”ê°€ìš”?\"\n");
+    print_underbar(i);
+    printf("\"ì˜ ë“¤ì–´ë³´ê²Œ. ì˜›ë‚ ì˜›ë‚  í•œ ì‚° ê¼­ëŒ€ê¸°ì— ì´ì„¸ìƒ ëª¨ë“  ì§€ì‹ì„ í†µë‹¬í•œ ì„ ì¸ì´ ìˆì—ˆì–´.\n");
+    print_underbar(i);
+    printf("ë§ˆì„ ì‚¬ëŒë“¤ì€ ëª¨ë‘ ê·¸ ì„ ì¸ì—ê²Œ ìˆ˜ë§ì€ ì§ˆë¬¸ì„ í–ˆê³ , ëª¨ë‘ ì§€í˜œë¡­ê²Œ ëŒ€ë‹µí•´ ì£¼ì—ˆì§€.\n");
+    print_underbar(i);
+    printf("ê·¸ì˜ ë‹µì€ ëŒ€ë¶€ë¶„ ì˜³ì•˜ë‹¤ê³  í•˜ë„¤. ê·¸ëŸ°ë° ì–´ëŠ ë‚ , ê·¸ ì„ ì¸ì—ê²Œ í•œ ì„ ë¹„ê°€ ì°¾ì•„ì™€ì„œ ë¬¼ì—ˆì–´.\"\n");
+
+    jaegi(n - 1, i + 1);
+    print_underbar(i);
+    printf("ë¼ê³  ë‹µë³€í•˜ì˜€ì§€.\n");
+
+    return;
 }
 
-int main(){
+int main()
+{
     int n;
-    scanf("%d",&n);
-    printf("¿¿ ¿ ¿¿¿¿¿¿ ¿¿¿ ¿¿¿ ¿¿¿¿ ¿¿¿ ¿¿¿.\n");
-    jaegi(n);
+    scanf("%d", &n);
+    printf("ì–´ëŠ í•œ ì»´í“¨í„°ê³µí•™ê³¼ í•™ìƒì´ ìœ ëª…í•œ êµìˆ˜ë‹˜ì„ ì°¾ì•„ê°€ ë¬¼ì—ˆë‹¤.\n");
+    jaegi(n, 0);
 }
