@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int *arr;
-int sorted[100000]; // 필요할떄마다 생성시 비효율적이다.
+int sorted[1000000]; // 필요할떄마다 생성시 비효율적이다.
 
 void merge(int *list, int left, int mid, int right)
 {
