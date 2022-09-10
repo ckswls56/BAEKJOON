@@ -8,7 +8,7 @@ using namespace std;
 int n, w;
 
 pair<int, int> work[1001];
-int dp[1001][1001]; // dp[i][j] == i는 1번 경찰차가 마지막으로 처리한 사건번호 j는 2번경찰차가 마지막으로 처리한 사건번호
+int dp[1001][1001]; // dp[i][j] == i는 1번 경찰차가 마지막으로 처리한 사건번호 j는 2번경찰차가 마지막으로 처리한 사건번호 의 거리
 
 int dist(pair<int, int> a, pair<int, int> b)
 {
