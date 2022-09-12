@@ -43,11 +43,13 @@ int main()
             scanf("%d", &v);
         }
     }
-    dfs(1, 0);
+
+    dfs(1, 0); // 임의의 정점 1 에서 가장먼 v1찾기
+
     memset(visit, 0, sizeof(visit));
     max_dist = 0;
 
-    dfs(max_node, 0);
+    dfs(max_node, 0); // v1에서 v2찾기
 
     printf("%d\n", max_dist);
 }
